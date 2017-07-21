@@ -1,1 +1,5 @@
-{{yield}}
+{{new-review restaurant=model createReview='createReview'}}
+{{#each model.reviews as |review|}}
+	{{review.title}}
+	{{review.rating}}
+{{/each}}

@@ -1,0 +1,34 @@
+{{#if isReviewFormVisible}}
+	<div class="container row">
+		<form>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="title">Title</label>
+					{{input type='text' value=title id="title" placeholder="Enter topic of the review" required='required' class="form-control"}}
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="author">Author</label>
+							{{input type='text' value=author id="author" placeholder="Your name" class="form-control"}}
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="rating">Rating</label>
+							{{input type='number' value=rating id="rating" placeholder="How do you rate us?" class="form-control"}}
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="message">Message</label>
+					{{textarea value=message id="message" placeholder="Content of your review" class="form-control"}}
+				</div>
+				<button class="btn btn-primary" {{action 'createReview'}}>Review</button>
+				<button class="btn btn-primary pull-right" {{action 'cancel'}}>Cancel</button>
+			</div>
+		</form>
+	</div>
+{{else}}
+	<button {{action 'showReviewForm'}} class="btn btn-primary">Review</button>
+{{/if}}

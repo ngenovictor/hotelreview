@@ -1,1 +1,56 @@
-{{yield}}
+{{#if isCreateFormVisible}}
+	<div class="container row">
+		<form>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="name">Name of Restaurant</label>
+					{{input type='text' value=name id="name" placeholder="Enter name of the restaurant" required='required' class="form-control"}}
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="type">Type of Restaurant</label>
+							{{input type='text' value=type id="type" placeholder="Enter the type of restaurant" class="form-control"}}
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="star_rating">Star Rating</label>
+							{{input type='number' value=star_rating id="star_rating" placeholder="What is the rating status of the restaurant?" class="form-control"}}
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="image">Image Url</label>
+					{{input type='text' value=image id="image" placeholder="Paste a URL that represents the restaurant" class="form-control"}}
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="description">Description</label>
+					{{textarea value=description id="description" placeholder="Describe the restaurant to other users." class="form-control"}}
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="longitude">Longitude</label>
+							{{input type='number' value=longitude id="longitude" placeholder="What is its Longitude location?" required='required' class="form-control"}}
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="latitude">Latitude</label>
+							{{input type='number' value=latitude id="latitude" required='required' placeholder="What is its Latitude location?" class="form-control"}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<button class="btn btn-primary" {{action 'create'}}>Create</button>
+				<button class="btn btn-primary pull-right" {{action 'cancel'}}>Cancel</button>
+			</div>
+		</form>
+	</div>
+{{else}}
+	<button {{action 'showCreateForm'}} class="btn btn-primary">Create New Restaurant</button>
+{{/if}}

@@ -1,6 +1,8 @@
 {{#each restaurants as |restaurant|}}
 	<div class="col-md-4">
 		{{restaurant.name}}
+		<button {{action 'addRestaurant' restaurant }}>Add</button>
+		{{if-in restaurant favoriteRestaurants}}	
 		<img src={{restaurant.image}} alt={{restaurant.name}}>
 		{{#link-to 'restaurant' restaurant.id}}Link{{/link-to}}
 	</div>

@@ -1,0 +1,56 @@
+{{#if isEditFormVisible}}
+	<div class="container row">
+		<form>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="name">Name of Restaurant</label>
+					{{input type='text' value=name id="name" placeholder=model.name required='required' class="form-control"}}
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="type">Type of Restaurant</label>
+							{{input type='text' value=type id="type" placeholder=model.type class="form-control"}}
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="star_rating">Star Rating</label>
+							{{input type='number' value=star_rating id="star_rating" placeholder=model.star_rating class="form-control"}}
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="image">Image Url</label>
+					{{input type='text' value=image id="image" placeholder=model.image class="form-control"}}
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="description">Description</label>
+					{{textarea value=description id="description" placeholder=model.description class="form-control"}}
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="longitude">Longitude</label>
+							{{input type='number' value=longitude id="longitude" placeholder=model.longitude required='required' class="form-control"}}
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="form-group">
+							<label for="latitude">Latitude</label>
+							{{input type='number' value=latitude id="latitude" required='required' placeholder=model.latitude class="form-control"}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<button class="btn btn-primary" {{action 'editDetails' model}}>Edit Details</button>
+				<button class="btn btn-primary pull-right" {{action 'cancel'}}>Cancel</button>
+			</div>
+		</form>
+	</div>
+{{else}}
+	<button {{action 'edit'}} class="btn btn-primary">Edit</button>
+{{/if}}

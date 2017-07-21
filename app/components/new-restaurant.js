@@ -14,8 +14,8 @@ export default Ember.Component.extend({
 				name: this.get('name'),
 				description: this.get('description'),
 				image: this.get('image'),
-				longitude: parseInt(this.get('longitude')),
-				latitude: parseInt(this.get('latitude')),
+				longitude: parseFloat(this.get('longitude')),
+				latitude: parseFloat(this.get('latitude')),
 				type: this.get('type'),
 				star_rating: parseInt(this.get('star_rating'))
 			};

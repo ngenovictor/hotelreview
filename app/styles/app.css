@@ -1,0 +1,7 @@
+img{
+	width: 100%;
+}
+img.restaurant{
+	height: 200px;
+	width: auto;
+}

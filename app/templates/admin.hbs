@@ -1,4 +1,9 @@
-<div class="container">
-	{{new-restaurant createRestaurant='createRestaurant'}}
-	{{view-restaurants}}
+<div class="container row">
+	<div class="col-md-3">
+		Restaurants:{{model.length}}
+	</div>
+	<div class="col-md-9">
+		{{new-restaurant createRestaurant='createRestaurant'}}
+		{{view-restaurants restaurants=model}}
+	</div>
 </div>

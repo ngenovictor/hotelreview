@@ -1,8 +1,7 @@
-<div class="container row">
-	{{#each restaurants as |restaurant|}}
-		<div class="col-md-2">
-			{{restaurant.name}}
-			<img src={{restaurant.image}} alt={{restaurant.name}}>
-		</div>
-	{{/each}}
-</div>
+{{#each restaurants as |restaurant|}}
+	<div class="col-md-4">
+		{{restaurant.name}}
+		<img src={{restaurant.image}} alt={{restaurant.name}}>
+		{{#link-to 'restaurant' restaurant.id}}Link{{/link-to}}
+	</div>
+{{/each}}

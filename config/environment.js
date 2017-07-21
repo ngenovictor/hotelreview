@@ -16,7 +16,12 @@ module.exports = function(environment) {
         Date: false
       }
     },
-
+    firebase: {
+      apiKey: 'AIzaSyAB_xVAOcBZiTufzOBwBNqRSDVhtSgyokA',
+      authDomain: 'mcore-c6e04.firebaseapp.com',
+      databaseURL: 'https://mcore-c6e04.firebaseio.com  ',
+      storageBucket: 'mcore-c6e04.appspot.com',
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
